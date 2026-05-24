@@ -1,0 +1,152 @@
+/* WebSoul.in Custom Styles */
+:root {
+  --bg: #050505;
+  --panel: #111111;
+  --accent: #D4AF37;
+  --text: #F5F5F5;
+  --muted: #A1A1A1;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(17, 17, 17, 0.6);
+}
+
+body {
+  cursor: none; /* Custom cursor */
+  background-color: var(--bg);
+}
+
+/* Custom Cursor */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+}
+
+.cursor-outline {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  transition: width 240ms ease, height 240ms ease, background 240ms ease, border-color 240ms ease;
+}
+
+.cursor-outline.is-hovering {
+  width: 72px;
+  height: 72px;
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.9);
+}
+
+@media (max-width: 900px) {
+  body {
+    cursor: auto;
+  }
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(0,0,0,0.4));
+  backdrop-filter: blur(10px);
+}
+
+/* Split Text Selection */
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Magnetic Button Prep */
+.magnetic-btn {
+  will-change: transform;
+}
+
+/* Shimmer Animation for CRM Diagram */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* SplitType lines wrapper to prevent overflow bugs */
+.line {
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+/* Hide lenis scrollbar */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Google Translate Custom Styling */
+.goog-te-gadget { 
+  color: transparent !important; 
+  font-family: 'Inter', 'Satoshi', sans-serif; 
+}
+.goog-te-gadget .goog-te-combo { 
+  color: #F5F5F5; 
+  background-color: transparent; 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  padding: 2px 8px; 
+  border-radius: 4px; 
+  outline: none; 
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.goog-te-gadget .goog-te-combo:focus,
+.goog-te-gadget .goog-te-combo:hover { 
+  border-color: #D4AF37; 
+  color: #D4AF37; 
+}
+.goog-logo-link { 
+  display: none !important; 
+}
+.goog-te-gadget img { 
+  display: none !important; 
+}
+.goog-te-banner-frame {
+  display: none !important;
+}
+body { 
+  top: 0 !important; /* Prevents the Google top banner from pushing the page down */
+}
+.skiptranslate iframe { 
+  display: none !important; 
+}
