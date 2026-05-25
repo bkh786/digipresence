@@ -14,7 +14,7 @@
  */
 
 const SHEET_NAME = "website";
-const NOTIFY_EMAIL = "bkh786@gmail.com"; // Your email to receive notifications
+const NOTIFY_EMAIL = "contact@digipresence.in"; // Your email to receive notifications
 
 function setupSheet() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
